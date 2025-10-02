@@ -1,7 +1,7 @@
 # 📸 Exif - Comprehensive Metadata Tool  
 
 <p align="center">
-  <img src="images/ExIF-Logo_BackgroundWhite.png" alt="GUI Screenshot" width="800">
+  <img src="images/ExIF-Logo_BackgroundWhite.png" alt="GUI Screenshot" width="200">
 </p>
 
 ## 🔎 Overview  
