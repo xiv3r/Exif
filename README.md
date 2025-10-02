@@ -1,7 +1,7 @@
 # 📸 Exif - Comprehensive Metadata Tool  
 
 <p align="center">
-  <img src="https://https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" alt="Exif Logo" height="200">
+  <img src="images/screenshot.png" alt="GUI Screenshot" width="800">
 </p>
 
 ## 🔎 Overview  
