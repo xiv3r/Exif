@@ -1,13 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Exif - Comprehensive Metadata Tool</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00ff9d',
+                        secondary: '#6366f1',
+                        dark: '#0a0a0a',
+                        'dark-card': '#151515',
+                    },
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        display: ['Orbitron', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
     <style>
+        /* ===== Modern Animations ===== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 157, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 255, 157, 0.6); }
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* ===== Utility Classes ===== */
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #00ff9d, #6366f1, #ec4899);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease infinite;
+        }
+        
+        .glass-effect {
+            background: rgba(21, 21, 21, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+        
+        .bg-gradient-radial {
+            background: radial-gradient(circle at 20% 50%, rgba(0, 255, 157, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+        }
+
+        /* ===== Legacy CSS Variables (for backward compatibility) ===== */
         :root {
             --primary-color: #00ff9d;
             --primary-dark: #00cc7d;
@@ -30,7 +115,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
@@ -661,30 +746,93 @@
         }
     </style>
 </head>
-<body>
-    <nav class="nav">
-        <div class="nav-content">
-            <div class="nav-logo-container">
-                <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" 
-                     alt="Exif Logo" class="nav-logo">
-            </div>
-            <div class="nav-links">
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#installation" class="nav-link">Installation</a>
-                <a href="#gui" class="nav-link">GUI Tool</a>
-                <a href="#cli" class="nav-link">CLI Tool</a>
+<body class="bg-dark text-gray-100 bg-gradient-radial">
+    <!-- Modern Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Section -->
+                <div class="flex items-center space-x-4">
+                    <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" 
+                         alt="Exif Logo" 
+                         class="h-12 w-auto animate-glow">
+                    <span class="text-2xl font-bold gradient-text">EXIF</span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Features</a>
+                    <a href="#installation" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Installation</a>
+                    <a href="#gui" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">GUI</a>
+                    <a href="#cli" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">CLI</a>
+                    <a href="https://github.com/AryanVBW/Exif" 
+                       class="bg-gradient-to-r from-primary to-secondary px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
+                        <i class="fab fa-github mr-2"></i>GitHub
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <header>
-        <div class="container">
-            <div class="hero">
-                <h1>Exif Metadata Extractor</h1>
-                <p>A powerful tool for extracting metadata from images, videos, audio files, and documents with a modern GUI interface.</p>
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 px-4 relative overflow-hidden">
+        <!-- Background Gradients -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute w-96 h-96 bg-primary/20 rounded-full blur-3xl -top-48 -left-48"></div>
+            <div class="absolute w-96 h-96 bg-secondary/20 rounded-full blur-3xl -bottom-48 -right-48"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <!-- Floating Logo -->
+            <div class="mb-8 animate-float">
+                <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" 
+                     alt="Exif Logo" 
+                     class="w-48 h-auto mx-auto drop-shadow-2xl">
             </div>
-            <div class="logo-container">
-                <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" alt="Exif Logo">
+            
+            <!-- Hero Title -->
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 gradient-text">
+                Exif Metadata Extractor
+            </h1>
+            
+            <!-- Hero Description -->
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+                A powerful, modern tool for extracting metadata from <span class="text-primary font-semibold">images</span>, 
+                <span class="text-secondary font-semibold">videos</span>, 
+                <span class="text-pink-500 font-semibold">audio files</span>, and 
+                <span class="text-purple-500 font-semibold">documents</span>
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#installation" 
+                   class="group bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105">
+                    Get Started <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#features" 
+                   class="glass-effect px-8 py-4 rounded-xl font-bold text-lg hover:border-primary transition-all duration-300 hover:scale-105">
+                    Explore Features
+                </a>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-4xl mx-auto">
+                <div class="glass-effect p-6 rounded-xl hover-lift">
+                    <div class="text-4xl font-bold text-primary mb-2">15+</div>
+                    <div class="text-gray-400">File Formats</div>
+                </div>
+                <div class="glass-effect p-6 rounded-xl hover-lift">
+                    <div class="text-4xl font-bold text-secondary mb-2">4</div>
+                    <div class="text-gray-400">Categories</div>
+                </div>
+                <div class="glass-effect p-6 rounded-xl hover-lift">
+                    <div class="text-4xl font-bold text-pink-500 mb-2">100%</div>
+                    <div class="text-gray-400">Open Source</div>
+                </div>
+                <div class="glass-effect p-6 rounded-xl hover-lift">
+                    <div class="text-4xl font-bold text-purple-500 mb-2">Fast</div>
+                    <div class="text-gray-400">Processing</div>
+                </div>
             </div>
         </div>
     </header>
