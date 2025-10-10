@@ -1,51 +1,69 @@
-# Exif - Comprehensive Metadata Tool
+# 📸 Exif - Comprehensive Metadata Tool  
 
 <p align="center">
-  <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" alt="Exif Logo" height="200">
+  <img src="images/ExIF-Logo_BackgroundWhite.png" alt="GUI Screenshot" width="200">
 </p>
 
-## Overview
-Exif is a powerful metadata extraction tool that supports multiple file types including images, videos, audio files, and documents. It provides both a modern GUI interface and a comprehensive CLI tool for extracting detailed metadata from your files.
+## 🔎 Overview  
+**Exif** is a powerful metadata extraction and management tool that supports multiple file types including **images, videos, audio, and documents**.  
+It provides:  
+- 🖥️ A **modern GUI** for beginners  
+- 💻 A **command-line interface (CLI)** for advanced users  
 
-## GUI Application Screenshots
+Use Exif to **extract, analyze, edit, and remove metadata** with ease.  
 
-### Main Interface
+---
+
+## 🖼️ GUI Screenshots  
+
+### Main Interface  
 <p align="center">
   <img src="images/screenshot.png" alt="Exif GUI Main Interface" width="800">
 </p>
 
-### Document Metadata View
+### Document Metadata View  
 <p align="center">
   <img src="images/screenshot_pdf.png" alt="Exif GUI PDF Metadata" width="800">
 </p>
 
-## Features
+---
 
-### 🖼️ Image Support
-- Extract EXIF data from images (JPG, JPEG, PNG, GIF, BMP, TIFF)
-- View image properties (dimensions, format, color profile)
-- Extract GPS coordinates and view locations on Google Maps
-- Remove EXIF data for privacy
+## 🚀 Features  
 
-### 🎥 Video Support
-- Extract video metadata (duration, resolution, codec, frame rate)
-- Get audio stream information
-- View technical specifications
+### Image Support  
+- Extract EXIF data (camera model, ISO, shutter speed, etc.)  
+- View image properties (dimensions, color profile, format)  
+- Extract GPS data & view location on Google Maps  
+- Remove metadata for privacy  
 
-### 🎵 Audio Support
-- Extract ID3 tags and audio properties
-- View artist, album, and track information
-- Get technical details (bitrate, sample rate, channels)
+### Video Support  
+- Extract video metadata (codec, duration, resolution, frame rate)  
+- Get audio stream details  
+- View technical specifications  
 
-### 📄 Document Support
-- Extract metadata from PDF files
-- Read DOCX document properties
-- View creation and modification dates
+### Audio Support  
+- Extract ID3 tags (artist, album, track)  
+- View bitrate, sample rate, channels  
+- Manage audio properties  
 
-### 🌐 Location Features
-- Extract GPS coordinates from images
-- Generate Google Maps links
-- View locations directly in your browser
+### Document Support  
+- Extract metadata from **PDF, DOCX, TXT**  
+- Read author, title, creation/modification dates  
+
+### Location Features  
+- Generate Google Maps links from GPS metadata  
+- View exact file location in browser  
+
+---
+
+## 📂 Supported File Formats  
+
+| Category   | Formats |
+|------------|---------|
+| **Images** | JPG, JPEG, PNG, GIF, BMP, TIFF |
+| **Videos** | MP4, AVI, MOV, MKV |
+| **Audio**  | MP3, WAV, FLAC |
+| **Docs**   | PDF, DOC/DOCX, TXT |
 
 ### 📊 Visualization Dashboard (NEW!)
 - **Interactive visualizations** of metadata across multiple files
@@ -56,10 +74,13 @@ Exif is a powerful metadata extraction tool that supports multiple file types in
 - **Fully interactive**: Hover for details, zoom, pan, and more
 
 ## Installation
+---
 
-### Prerequisites
-- Python 3.8 or higher
-- Required libraries (install using pip):
+## ⚡ Installation  
+
+### Prerequisites  
+- Python **3.8+**  
+- Install dependencies:  
 ```bash
 pip install -r requirements.txt
 ```
@@ -78,37 +99,27 @@ This will:
 
 ### GUI Application
 1. Clone the repository:
+### GUI Application  
 ```bash
 git clone https://github.com/AryanVBW/Exif.git
 cd Exif
-```
-
-2. Run the GUI application:
-```bash
 python exif-gui.py
 ```
 
-### CLI Tool
-1. Install the required dependencies:
+### CLI Tool  
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/AryanVBW/Exif.git
+cd Exif
+python exif-cli.py path/to/file
 ```
 
-2. Basic usage:
+---
+
+## 🛠️ Usage Examples  
+
+### Extract metadata from image  
 ```bash
-python exif-cli.py path/to/your/file
-```
-
-3. Advanced options:
-```bash
-# View metadata in JSON format
-python exif-cli.py path/to/your/file --format json
-
-# Save metadata to a file
-python exif-cli.py path/to/your/file --save metadata.json
-
-# Automatically open Google Maps for location data
-python exif-cli.py path/to/your/file --open-maps
+python exif-cli.py photo.jpg
 ```
 
 ### 📊 Visualization Dashboard
@@ -298,95 +309,93 @@ Created by AryanVBW
 
 ### GUI Application Usage
 1. Install the required dependencies:
+### Save metadata to JSON  
 ```bash
-pip install -r requirements.txt
+python exif-cli.py video.mp4 --format json --save metadata.json
 ```
 
-2. Run the GUI application:
+### Remove EXIF data from image  
 ```bash
-python exif-gui.py
+python remove-exif.py image.jpg
 ```
 
-3. Features of the GUI application:
-   - Modern, professional interface
-   - File type auto-detection
-   - Support for multiple file formats
-   - Save metadata to JSON or text files
-   - Easy-to-use file browser
-   - Detailed metadata display
-
-## Prerequisites 
-1. Install python3
-   - Debian, Ubuntu, Etc: `sudo apt-get install python3`
-   - Fedora, Oracle, Red Hat, etc: `su -c "yum install python"`
-   - Windows: [Python for Windows](https://www.python.org/downloads/windows/)
-
-2. Install required libraries:
-   ```bash 
-   python3 -m pip install --upgrade pip
-   python3 -m pip install --upgrade Pillow
-   pip install Pillow moviepy eyed3 python-magic
-   ```
-
-## Installation 
-
-### Command Line Tools
+### Auto-open GPS in Google Maps  
 ```bash
-git clone https://github.com/AryanVBW/Exif.git
-cd Exif
-python3 exif-main.py
+python exif-cli.py photo.jpg --open-maps
 ```
 
-### To remove exif data from images, use the following command:
+### Batch process multiple files  
 ```bash
-python3 remove-exif.py
-```
-## 📸🎥🔍 Direct Use 
-
-Discover the hidden details in your media files effortlessly! Simply run this script and:
-
-  - 🌐 Enter the path to your images, videos, or audio files.
-  - 💾 Choose where to save the extracted Exif data.
-
-Unearth the metadata magic with style!
-
-### Command Line Usage
-```bash
-git clone https://github.com/AryanVBW/Exif.git
-cd Exif
-python3 exif-raw.py
+python exif-cli.py *.jpg --format json
 ```
 
-### For printing JPG output directly on terminal or PowerShell:
+---
+
+## 📖 Command Reference  
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `--format json` | Export metadata in JSON format | `python exif-cli.py file.jpg --format json` |
+| `--save file.json` | Save metadata to file | `python exif-cli.py file.mp4 --save meta.json` |
+| `--open-maps` | Open GPS location in Google Maps | `python exif-cli.py photo.jpg --open-maps` |
+| `-all=` | Remove all metadata from file | `python remove-exif.py file.jpg` |
+| `-overwrite_original` | Overwrite files without backup | `python exif-cli.py file.jpg -overwrite_original` |
+
+---
+
+## 🏷️ Metadata Fields Explained  
+
+- **EXIF (Exchangeable Image File Format)** → Camera settings (aperture, shutter speed, ISO, flash, orientation)  
+- **IPTC (International Press Telecommunications Council)** → Captions, copyright, creator, keywords  
+- **XMP (Extensible Metadata Platform)** → Adobe fields (title, description, author, subject)  
+- **GPS Metadata** → Latitude, longitude, altitude, timestamp  
+- **Audio Tags (ID3, Vorbis, etc.)** → Artist, album, track number, genre  
+
+---
+
+## 🛑 Troubleshooting  
+
+| Problem | Solution |
+|---------|----------|
+| `Permission denied` | Run with `sudo` on Linux/macOS |
+| Backup files clutter folder (`_original`) | Use `-overwrite_original` flag |
+| Missing metadata fields | Not all file formats support every tag |
+| Garbled characters in output | Use UTF-8 encoding: `exiftool -charset UTF8 file.jpg` |
+| GUI not starting | Ensure all dependencies from `requirements.txt` are installed |
+
+---
+
+## ❓ FAQ  
+
+**Q1: Is Exif safe to use?**  
+✅ Yes, but always back up your files before modifying metadata.  
+
+**Q2: Does Exif overwrite files?**  
+By default, backups are created. Use `-overwrite_original` to skip them.  
+
+**Q3: Is it cross-platform?**  
+Yes, works on **Windows, macOS, and Linux**.  
+
+**Q4: Can Exif handle videos and audio files?**  
+Yes, basic metadata extraction is supported for video and audio formats.  
+
+**Q5: How can I see all available metadata fields in a file?**  
+Run:  
 ```bash
-git clone https://github.com/AryanVBW/Exif.git
-cd Exif
-python3 exif.py
+python exif-cli.py file.jpg --format json
 ```
 
-### GUI Application
-For a more user-friendly experience, use the GUI application:
-```bash
-python exif-gui.py
-```
+---
 
-The GUI application provides:
-- 🖼️ Easy file selection
-- 🔍 Auto file type detection
-- 📊 Detailed metadata display
-- 💾 Save options (JSON/TXT)
-- 🎨 Modern, professional interface
+## 📜 License  
+This project is licensed under the MIT License – see [LICENSE](LICENSE).  
 
-### Thank You 🙏
+---
 
-This project was inspired by the incredible YouTube tutorial "[EXIF Data Project in Python](https://youtu.be/A_itRNhbgZk?si=sHaWhNV9tn4cVwWC)", which provided valuable insights into building an Exif data tool.
+## 👨‍💻 Credits  
+- Developed by **AryanVBW**  
+- Inspired by David Bombal’s [Exif script](https://github.com/davidbombal/red-python-scripts/blob/main/exif.py)  
+- Thanks to the open-source community for contributions and testing  
 
-A heartfelt thanks to David Bombal for his fantastic [exif.py script on GitHub](https://github.com/davidbombal/red-python-scripts/blob/main/exif.py), which served as a guiding resource during development.
+---
 
-To the open-source community, developers, and testers: your support makes this project thrive.
-
-Let's continue exploring the stories hidden within our media files!
-<p align="center"> 
-  Visitor count<br>
-  <img src="https://profile-counter.glitch.me/Aryanvbw/count.svg" />
-</p>
