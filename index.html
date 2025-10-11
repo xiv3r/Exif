@@ -938,72 +938,163 @@
             </div>
         </section>
 
-        <section id="cli" class="cli-section">
-            <h2>Command Line Interface</h2>
-            <p>Powerful CLI tool for extracting metadata from any file type</p>
+        <!-- CLI Section -->
+        <section id="cli" class="mb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4 gradient-text">Command Line Interface</h2>
+                <p class="text-xl text-gray-400">Powerful CLI tool for extracting metadata from any file type</p>
+            </div>
             
-            <div class="cli-features">
-                <div class="cli-feature">
-                    <h3>Basic Usage</h3>
-                    <ul>
-                        <li>Extract metadata from any file</li>
-                        <li>Auto-detect file type</li>
-                        <li>View detailed information</li>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="glass-effect p-8 rounded-2xl hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-green-400 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-terminal text-2xl text-dark"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary">Basic Usage</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-primary mr-3 mt-1"></i>
+                            <span>Extract metadata from any file</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-primary mr-3 mt-1"></i>
+                            <span>Auto-detect file type</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-primary mr-3 mt-1"></i>
+                            <span>View detailed information</span>
+                        </li>
                     </ul>
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <code>python exif-cli.py path/to/your/file</code>
+                    <div class="relative bg-black/50 p-4 rounded-lg border border-primary/20">
+                        <button onclick="copyCode(this)" 
+                                class="absolute top-2 right-2 bg-primary/20 hover:bg-primary/30 text-primary px-3 py-1 rounded text-sm transition-all">
+                            <i class="fas fa-copy mr-1"></i>Copy
+                        </button>
+                        <code class="text-primary font-mono text-sm block mt-6">python exif-cli.py path/to/your/file</code>
                     </div>
                 </div>
                 
-                <div class="cli-feature">
-                    <h3>Advanced Options</h3>
-                    <ul>
-                        <li>JSON output format</li>
-                        <li>Save metadata to file</li>
-                        <li>Google Maps integration</li>
+                <div class="glass-effect p-8 rounded-2xl hover-lift">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-secondary to-purple-400 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-cog text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-secondary">Advanced Options</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-300 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-secondary mr-3 mt-1"></i>
+                            <span>JSON output format</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-secondary mr-3 mt-1"></i>
+                            <span>Save metadata to file</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-secondary mr-3 mt-1"></i>
+                            <span>Google Maps integration</span>
+                        </li>
                     </ul>
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        <code>python exif-cli.py path/to/your/file --format json --save metadata.json --open-maps</code>
+                    <div class="relative bg-black/50 p-4 rounded-lg border border-secondary/20">
+                        <button onclick="copyCode(this)" 
+                                class="absolute top-2 right-2 bg-secondary/20 hover:bg-secondary/30 text-secondary px-3 py-1 rounded text-sm transition-all">
+                            <i class="fas fa-copy mr-1"></i>Copy
+                        </button>
+                        <code class="text-secondary font-mono text-sm block mt-6">python exif-cli.py path/to/your/file --format json --save metadata.json --open-maps</code>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="installation" class="card">
-            <div class="card-title">
-                <h2>Installation</h2>
-            </div>
-            <p>Install the required dependencies:</p>
-            <div class="code-block">
-                <button class="copy-button" onclick="copyCode(this)">Copy</button>
-                <pre>pip install -r requirements.txt</pre>
+        <!-- Installation Section -->
+        <section id="installation" class="mb-32">
+            <div class="glass-effect p-10 rounded-2xl">
+                <div class="flex items-center mb-8">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-download text-3xl text-white"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-bold gradient-text">Installation</h2>
+                        <p class="text-gray-400 mt-1">Get started in just a few steps</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">1. Clone the repository</h3>
+                        <div class="relative bg-black/50 p-4 rounded-lg border border-primary/20">
+                            <button onclick="copyCode(this)" 
+                                    class="absolute top-2 right-2 bg-primary/20 hover:bg-primary/30 text-primary px-3 py-1 rounded text-sm transition-all">
+                                <i class="fas fa-copy mr-1"></i>Copy
+                            </button>
+                            <pre class="text-primary font-mono text-sm overflow-x-auto">git clone https://github.com/AryanVBW/Exif.git
+cd Exif</pre>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-secondary mb-3">2. Install dependencies</h3>
+                        <div class="relative bg-black/50 p-4 rounded-lg border border-secondary/20">
+                            <button onclick="copyCode(this)" 
+                                    class="absolute top-2 right-2 bg-secondary/20 hover:bg-secondary/30 text-secondary px-3 py-1 rounded text-sm transition-all">
+                                <i class="fas fa-copy mr-1"></i>Copy
+                            </button>
+                            <pre class="text-secondary font-mono text-sm">pip install -r requirements.txt</pre>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-pink-500 mb-3">3. Run the application</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="relative bg-black/50 p-4 rounded-lg border border-pink-500/20">
+                                <button onclick="copyCode(this)" 
+                                        class="absolute top-2 right-2 bg-pink-500/20 hover:bg-pink-500/30 text-pink-500 px-3 py-1 rounded text-sm transition-all">
+                                    <i class="fas fa-copy mr-1"></i>Copy
+                                </button>
+                                <div class="text-xs text-gray-400 mb-2">GUI Application</div>
+                                <pre class="text-pink-500 font-mono text-sm">python exif-gui.py</pre>
+                            </div>
+                            <div class="relative bg-black/50 p-4 rounded-lg border border-purple-500/20">
+                                <button onclick="copyCode(this)" 
+                                        class="absolute top-2 right-2 bg-purple-500/20 hover:bg-purple-500/30 text-purple-500 px-3 py-1 rounded text-sm transition-all">
+                                    <i class="fas fa-copy mr-1"></i>Copy
+                                </button>
+                                <div class="text-xs text-gray-400 mb-2">CLI Tool</div>
+                                <pre class="text-purple-500 font-mono text-sm">python exif-cli.py file.jpg</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="usage" class="card">
-            <div class="card-title">
-                <h2>Usage</h2>
+        <!-- CTA Section -->
+        <section class="mb-32">
+            <div class="glass-effect p-16 rounded-3xl text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-pink-500/10"></div>
+                <div class="relative z-10">
+                    <h2 class="text-5xl font-bold mb-6 gradient-text">Ready to Get Started?</h2>
+                    <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                        Download Exif now and start managing your media metadata with ease. 
+                        Join the community and contribute to the project!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://github.com/AryanVBW/Exif" 
+                           class="group bg-gradient-to-r from-primary to-secondary px-10 py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105 inline-flex items-center justify-center">
+                            <i class="fab fa-github text-2xl mr-3"></i>
+                            Download on GitHub
+                            <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                        <a href="#features" 
+                           class="glass-effect px-10 py-5 rounded-xl font-bold text-lg hover:border-primary transition-all duration-300 hover:scale-105 inline-flex items-center justify-center">
+                            <i class="fas fa-book mr-3"></i>
+                            View Documentation
+                        </a>
+                    </div>
+                </div>
             </div>
-            
-            <h3>Command Line</h3>
-            <div class="code-block">
-                <button class="copy-button" onclick="copyCode(this)">Copy</button>
-                <pre>python3 exif.py</pre>
-            </div>
-
-            <h3>GUI Application</h3>
-            <div class="code-block">
-                <button class="copy-button" onclick="copyCode(this)">Copy</button>
-                <pre>python exif-gui.py</pre>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <h2>Ready to Get Started?</h2>
-            <p>Download Exif now and start managing your media metadata with ease.</p>
-            <a href="https://github.com/AryanVBW/Exif" class="cta-button">Download on GitHub</a>
         </section>
     </main>
 
@@ -1024,17 +1115,17 @@
     <script>
         function copyCode(button) {
             const codeBlock = button.nextElementSibling;
-            const text = codeBlock.textContent;
+            const text = codeBlock.textContent.trim();
             
             navigator.clipboard.writeText(text).then(() => {
-                const originalText = button.textContent;
-                button.textContent = 'Copied!';
-                button.style.background = 'rgba(0, 255, 157, 0.3)';
+                const originalHTML = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check mr-1"></i>Copied!';
                 
                 setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = 'rgba(0, 255, 157, 0.1)';
+                    button.innerHTML = originalHTML;
                 }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
             });
         }
     </script>
