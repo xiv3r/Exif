@@ -65,6 +65,15 @@ Use Exif to **extract, analyze, edit, and remove metadata** with ease.
 | **Audio**  | MP3, WAV, FLAC |
 | **Docs**   | PDF, DOC/DOCX, TXT |
 
+### 📊 Visualization Dashboard (NEW!)
+- **Interactive visualizations** of metadata across multiple files
+- **Dark mode dashboard** with Power BI-style layout
+- **7+ chart types**: pie charts, bar charts, timelines, scatter plots, histograms, box plots
+- **Statistical analysis**: file type distribution, camera usage, ISO/aperture patterns, resolution analysis
+- **Export options**: View charts in browser, save as HTML
+- **Fully interactive**: Hover for details, zoom, pan, and more
+
+## Installation
 ---
 
 ## ⚡ Installation  
@@ -76,6 +85,20 @@ Use Exif to **extract, analyze, edit, and remove metadata** with ease.
 pip install -r requirements.txt
 ```
 
+### Quick Setup
+Run the automated setup script:
+```bash
+bash setup.sh
+```
+
+This will:
+- Create a virtual environment
+- Install all dependencies
+- Set up the project structure
+- Configure the environment
+
+### GUI Application
+1. Clone the repository:
 ### GUI Application  
 ```bash
 git clone https://github.com/AryanVBW/Exif.git
@@ -99,6 +122,193 @@ python exif-cli.py path/to/file
 python exif-cli.py photo.jpg
 ```
 
+### 📊 Visualization Dashboard
+
+#### Quick Test (Sample Data)
+Run a quick test with automatically generated sample data:
+```bash
+python test_visualizations.py
+```
+This will:
+- Generate 150 sample files with realistic metadata
+- Create 7 interactive visualizations
+- Open the dashboard in your browser
+- Save charts to `exports/test_visualizations/`
+
+#### Full Demo (Your Files)
+Process your actual media files and create visualizations:
+```bash
+python demo_visualizations.py
+```
+This will:
+- Scan your `media/` directory for files
+- Extract metadata from all supported file types
+- Perform statistical analysis
+- Generate comprehensive visualizations
+- Create an interactive dashboard
+- Save to `exports/` directory
+
+#### Dashboard Features
+The visualization dashboard includes:
+- **File Types**: Pie chart showing file type distribution
+- **Camera Models**: Bar chart of most-used cameras
+- **Timeline**: Line chart of files over time
+- **File Sizes**: Histogram with size distribution
+- **Resolution**: Scatter plot of image dimensions
+- **ISO Settings**: Distribution of ISO values
+- **Aperture**: Box plot of aperture settings by camera
+
+All charts are **fully interactive**:
+- Hover to see detailed information
+- Click and drag to zoom into specific areas
+- Double-click to reset the view
+- Use toolbar to save charts as PNG
+- Click "⤢" icon to open chart in new tab
+
+## Supported File Types
+
+### Images
+- JPG/JPEG
+- PNG
+- GIF
+- BMP
+- TIFF
+
+### Videos
+- MP4
+- AVI
+- MOV
+- MKV
+
+### Audio
+- MP3
+- WAV
+- FLAC
+
+### Documents
+- PDF
+- DOC/DOCX
+- TXT
+
+## Requirements
+
+### Core Dependencies
+- Python 3.8+
+- Pillow
+- exifread
+- moviepy
+- eyed3
+- python-magic
+- ffmpeg
+- pdfplumber
+- python-docx
+- mutagen
+- rich
+
+### Visualization Dependencies
+- plotly (5.11+) - Interactive charts
+- pandas - Data manipulation
+- numpy - Numerical operations
+- matplotlib - Static visualizations
+- seaborn - Statistical graphics
+
+### Installation
+All dependencies can be installed with:
+```bash
+pip install -r requirements.txt
+pip install -r requirements-dashboard.txt
+```
+
+Or use the automated setup:
+```bash
+bash setup.sh
+```
+
+## Project Structure
+
+```
+Exif/
+├── exif-gui.py              # GUI application (tkinter-based)
+├── exif-cli.py              # Command-line interface tool
+├── exif-main.py             # Main CLI script
+├── exif.py                  # Terminal output version
+├── remove-exif.py           # Remove EXIF data from images
+├── test_visualizations.py   # Quick test with sample data
+├── demo_visualizations.py   # Full demo with your files
+├── setup.sh                 # Automated setup script
+├── requirements.txt         # Core dependencies
+├── requirements-dashboard.txt # Visualization dependencies
+├── core/                    # Core modules
+│   ├── data_models.py       # Data structures (Pydantic models)
+│   ├── metadata_aggregator.py # Batch processing & extraction
+│   └── data_storage.py      # SQLite database operations
+├── analysis/                # Analysis modules
+│   └── statistical_analyzer.py # Statistical analysis
+├── visualization/           # Visualization modules
+│   └── visualizer.py        # Chart generation (Plotly)
+├── exports/                 # Generated visualizations
+├── media/                   # Your media files (for processing)
+└── data/                    # Database storage
+```
+
+## Usage Examples
+
+### Extract Metadata from Single File
+```bash
+python exif-cli.py photo.jpg
+```
+
+### Process Multiple Files
+```bash
+python demo_visualizations.py
+```
+
+### View in GUI
+```bash
+python exif-gui.py
+```
+
+### Quick Visualization Test
+```bash
+python test_visualizations.py
+```
+
+## Dashboard Screenshots
+The visualization dashboard provides a modern, dark-mode interface similar to Power BI:
+- All charts visible at once (no scrolling)
+- 4x2 grid layout on desktop
+- Fully responsive design
+- Interactive tooltips and zoom
+- Professional dark theme
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Credits
+Created by AryanVBW
+
+## Features
+- Extract exif data of images jpg, jpeg, png.
+- Clear exif data of images.
+- Save data in a text file.
+- Modern GUI application for easy metadata extraction.
+- Support for multiple file types including images, videos, and audio.
+## Supported Formats
+ - Images:
+     - PNG, JPG, JPEG, GIF, BMP, TIFF
+ - **Videos** :
+     - MP4, MKV, AVI, MOV
+ - **Audio** :
+     - MP3 (limited support, additional library may be required)
+ - OutputThe script will display metadata information for each file.If the output is set to a file, the results will be saved in exif_data.txt.
+## Installation and usage instructions:
+
+### Command Line Usage
+- Add .jpg to subfolder ./images from where the script is stored. 
+- Note: Most social media sites strip exif data from uploaded photos.
+
+### GUI Application Usage
+1. Install the required dependencies:
 ### Save metadata to JSON  
 ```bash
 python exif-cli.py video.mp4 --format json --save metadata.json

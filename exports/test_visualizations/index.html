@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXIF Metadata Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d1117;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            border-bottom: 1px solid #30363d;
+            color: #e6edf3;
+            padding: 12px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #58a6ff;
+        }
+        .header-info {
+            font-size: 0.85em;
+            opacity: 0.9;
+            color: #8b949e;
+        }
+        .dashboard {
+            flex: 1;
+            padding: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 12px;
+            height: calc(100vh - 60px);
+        }
+        .chart-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+        .chart-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+            border-color: #58a6ff;
+        }
+        .chart-header {
+            padding: 10px 12px;
+            border-bottom: 1px solid #30363d;
+            background: #0d1117;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .chart-title {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #e6edf3;
+        }
+        .chart-icon {
+            color: #58a6ff;
+            cursor: pointer;
+            font-size: 0.85em;
+            text-decoration: none;
+        }
+        .chart-icon:hover {
+            color: #79c0ff;
+        }
+        .chart-body {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        /* Specific grid positions for optimal layout */
+        .chart-card:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 2; }
+        .chart-card:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; }
+        .chart-card:nth-child(3) { grid-column: 3 / 5; grid-row: 1 / 2; }
+        .chart-card:nth-child(4) { grid-column: 1 / 2; grid-row: 2 / 3; }
+        .chart-card:nth-child(5) { grid-column: 2 / 3; grid-row: 2 / 3; }
+        .chart-card:nth-child(6) { grid-column: 3 / 4; grid-row: 2 / 3; }
+        .chart-card:nth-child(7) { grid-column: 4 / 5; grid-row: 2 / 3; }
+        
+        @media (max-width: 1400px) {
+            .dashboard {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+            }
+            .chart-card:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 2; }
+            .chart-card:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; }
+            .chart-card:nth-child(3) { grid-column: 3 / 4; grid-row: 1 / 2; }
+            .chart-card:nth-child(4) { grid-column: 1 / 2; grid-row: 2 / 3; }
+            .chart-card:nth-child(5) { grid-column: 2 / 3; grid-row: 2 / 3; }
+            .chart-card:nth-child(6) { grid-column: 3 / 4; grid-row: 2 / 3; }
+            .chart-card:nth-child(7) { grid-column: 1 / 4; grid-row: 3 / 4; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 EXIF Metadata Dashboard</h1>
+        <div class="header-info">150 files • 5 cameras • 7 visualizations</div>
+    </div>
+    <div class="dashboard">
+
+        <div class="chart-card">
+            <div class="chart-header">
+                <div class="chart-title">File Types</div>
+                <a href="01_file_types.html" target="_blank" class="chart-icon" title="Open in new tab">⤢</a>
+            </div>
+            <div class="chart-body">
+                <iframe src="01_file_types.html" title="File Types"></iframe>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-header">
+                <div class="chart-title">Camera Models</div>
+                <a href="02_cameras.html" target="_blank" class="chart-icon" title="Open in new tab">⤢</a>
+            </div>
+            <div class="chart-body">
+                <iframe src="02_cameras.html" title="Camera Models"></iframe>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-header">
+                <div class="chart-title">Timeline</div>
+                <a href="03_timeline.html" target="_blank" class="chart-icon" title="Open in new tab">⤢</a>
+            </div>
+            <div class="chart-body">
+                <iframe src="03_timeline.html" title="Timeline"></iframe>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-header">
+                <div class="chart-title">File Sizes</div>
+                <a href="04_file_sizes.html" target="_blank" class="chart-icon" title="Open in new tab">⤢</a>
+            </div>
+            <div class="chart-body">
+                <iframe src="04_file_sizes.html" title="File Sizes"></iframe>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-header">
+                <div class="chart-title">Resolution</div>
+                <a href="05_resolution.html" target="_blank" class="chart-icon" title="Open in new tab">⤢</a>
+            </div>
+            <div class="chart-body">
+                <iframe src="05_resolution.html" title="Resolution"></iframe>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-header">
+                <div class="chart-title">ISO Settings</div>
+                <a href="06_iso.html" target="_blank" class="chart-icon" title="Open in new tab">⤢</a>
+            </div>
+            <div class="chart-body">
+                <iframe src="06_iso.html" title="ISO Settings"></iframe>
+            </div>
+        </div>
+
+        <div class="chart-card">
+            <div class="chart-header">
+                <div class="chart-title">Aperture</div>
+                <a href="07_aperture.html" target="_blank" class="chart-icon" title="Open in new tab">⤢</a>
+            </div>
+            <div class="chart-body">
+                <iframe src="07_aperture.html" title="Aperture"></iframe>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
